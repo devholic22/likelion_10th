@@ -6,7 +6,7 @@ const App = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000")
+      .get("http://localhost:4000/api/posts")
       // .get("https://jsonplaceholder.typicode.com/todos/1")
       .then((response) => {
         setData(response.data);
