@@ -9,8 +9,9 @@ const getOnePost = (req, res) => {
   const result = database.data.findIndex((data) => data.id === id);
   if (result != -1) {
     const sorted = database.data.filter((data) => data.id === id)[0];
-    database.data = sorted;
-    return res.json(database);
+    const result = Object.assign({}, database);
+    result.data = sorted;
+    return res.json(result);
   }
   return res.json({
     error: "Post not exist"
