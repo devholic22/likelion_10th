@@ -61,9 +61,16 @@ const deletePost = (req, res) => {
     return res.json({ error: "Cannot delete post" });
   }
 };
-postsRouter.get("/", getAllPost);
-postsRouter.post("/", createPost);
-postsRouter.put("/", editPost);
-postsRouter.delete("/", deletePost);
 
+// get post put delete 한 줄로 작성
+postsRouter
+  .route("/")
+  .get(getAllPost)
+  .post(createPost)
+  .put(editPost)
+  .delete(deletePost);
+// postsRouter.get("/", getAllPost);
+// postsRouter.post("/", createPost);
+// postsRouter.put("/", editPost);
+// postsRouter.delete("/", deletePost);
 export default postsRouter;
