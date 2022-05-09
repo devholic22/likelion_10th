@@ -1,10 +1,10 @@
 import { Router } from "express";
-import get from "./get";
-import post from "./post";
+import postsRouter from "./postsRouter";
+import postRouter from "./postRouter";
 
 const router = Router();
 
-router.use("/get", get);
-router.use("/post", post);
+router.use("/posts", postsRouter);
+router.use("/post", postRouter);
 
 export default router;
