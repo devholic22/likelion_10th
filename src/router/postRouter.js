@@ -4,6 +4,13 @@ import { editPost, getPost, getOnePost, writePost, deletePost } from "../control
 
 const postRouter = Router();
 
+/**
+ * @swagger
+ * tags:
+ *   name: Post
+ *   description: 게시글 관련
+ */
+
 postRouter.get("/", getPost);
 postRouter.post("/", verifyToken, writePost);
 postRouter.get("/:id", getOnePost);

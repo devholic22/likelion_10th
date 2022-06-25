@@ -1,0 +1,6 @@
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        error: string

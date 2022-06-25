@@ -2,7 +2,7 @@ import Post from "../../models/Post"
 
 export const getPost = async (req, res) => {
     const allPost = await Post.findAll({});
-    return res.json({
+    return res.status(200).json({
         title: "게시글 목록 조회",
         posts: allPost
     })
@@ -10,7 +10,7 @@ export const getPost = async (req, res) => {
 export const getOnePost = async (req, res) => {
     const {id} = req.params;
     if(!id){
-        return res.json({
+        return res.status(400).json({
             error: "정상적인 요청이 아닙니다."
         })
     }
@@ -20,7 +20,7 @@ export const getOnePost = async (req, res) => {
         }
     })
     if(!target){
-        return res.json({
+        return res.status(404).json({
             error: "해당 글이 없습니다."
         })
     }
@@ -30,7 +30,7 @@ export const writePost = async (req, res) => {
     const {title, content} = req.body;
     const {id} = req.decoded;
     if(!title || !content){
-        return res.json({
+        return res.status(400).json({
             error: "정상적인 요청이 아닙니다."
         });
     }
@@ -45,7 +45,7 @@ export const writePost = async (req, res) => {
 export const editPost = async (req, res) => {
     const {title, content} = req.body;
     if(!title || !content){
-        return res.json({
+        return res.status(400).json({
             error: "정상적인 요청이 아닙니다."
         })
     }
@@ -57,12 +57,12 @@ export const editPost = async (req, res) => {
         }
     })
     if(!target){
-        return res.json({
+        return res.status(404).json({
             error: "해당 글이 없습니다."
         })
     }
     if(target.writer !== loggedInUser){
-        return res.json({
+        return res.status(403).json({
             error: "해당 글의 작성자가 아닙니다."
         })
     }
@@ -79,12 +79,12 @@ export const deletePost = async (req, res) => {
         }
     })
     if(!target){
-        return res.json({
+        return res.status(404).json({
             error: "해당 글이 없습니다."
         })
     }
     if(target.writer !== loggedInUser){
-        return res.json({
+        return res.status(403).json({
             error: "해당 글의 작성자가 아닙니다."
         })
     }
@@ -93,5 +93,5 @@ export const deletePost = async (req, res) => {
             id
         }
     });
-    return res.send("삭제 완료");
+    return res.status(200).send("삭제 완료");
 }

@@ -6,9 +6,14 @@ import verifyToken from "../middlewares";
 import globalRouter from "./router/globalRouter";
 import userRouter from "./router/userRouter";
 import postRouter from "./router/postRouter";
+import swaggerOptions from "./swagger";
+import swaggerJSDoc from "swagger-jsdoc";
+import swaggerUi from "swagger-ui-express";
 
 const app = express();
 const port = 3000;
+const specs = swaggerJSDoc(swaggerOptions);
+
 config();
 
 sequelize
@@ -26,7 +31,9 @@ app.use(express.urlencoded({extended: true}));
 app.use("/", globalRouter);
 app.use("/user", userRouter);
 app.use("/post", postRouter);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs, {explorer: true}));
 
 app.listen(port, () => {
+  console.log(__dirname);
   console.log(`http://localhost:${port}`);
 });
