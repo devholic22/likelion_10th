@@ -4,13 +4,13 @@ module.exports = class User extends Sequelize.Model{
     static init(sequelize){ // 테이블에 대한 설정
         return super.init({ // 테이블 컬럼에 대한 설정
             email: {
-                type: Sequelize.STRING(20)
+                type: Sequelize.STRING(50)
             },
             username: {
                 type: Sequelize.STRING(15)
             },
             password: {
-                type: Sequelize.STRING(15)
+                type: Sequelize.STRING(60)
             }
 		}, { // 테이블 자체에 대한 설정
             sequelize,
@@ -23,7 +23,8 @@ module.exports = class User extends Sequelize.Model{
         });
     }
     static associate(db){ // 다른 모델과의 관계
-        // User 안에 있는 "id값"을 "writer 라는 컬럼 이름"으로 Post 모델에 새로운 컬럼으로 추가한다
-        db.User.hasMany(db.Post, { foriegnKey: 'writer', targetKey: 'id'});
+        // belongsTo에서 targetKey를 설정하고, hasMany에서 sourceKey를 설정한다
+        // User의 id는 hasMany의 sourceKey이자 belongsTo의 targetKey
+        db.User.hasMany(db.Post, { foreignKey: 'writer', sourceKey: 'id'});
     }
 };
