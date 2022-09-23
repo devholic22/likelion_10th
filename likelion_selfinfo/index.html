@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./static/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    />
+    <title>자기소개 페이지</title>
+  </head>
+  <body>
+    <header>
+      <span>자기소개 페이지</span>
+    </header>
+    <article>
+      <div class="clock">
+        <span class="clock-value">00:00:00</span>
+      </div>
+      <div class="profile">
+        <img src="./static/img/profile.jpeg" alt="" class="profile-img" />
+        <div>
+          <div class="profile-title">
+            <span>이름</span>
+          </div>
+          <span>최현준</span>
+          <div class="profile-title">
+            <span>학과</span>
+          </div>
+          <span>💻 컴퓨터공학과</span>
+          <div class="profile-title">
+            <span>파트</span>
+          </div>
+          <span>백엔드</span>
+          <div class="profile-title">
+            <span>MBTI</span>
+          </div>
+          <span>INFJ</span>
+        </div>
+      </div>
+      <div class="article-content">
+        <div class="article-content-element">
+          <div class="article-content-header">
+            <i class="fas fa-caret-right toggle-btn"></i>
+            <span class="article-content-logo">👋 </span>
+            <span class="article-content-title">안녕하세요!</span>
+          </div>
+          <span class="article-content-value hidden"
+            >멋사 10기에 백엔드 파트로 참여하게 된 최현준입니다. 잘
+            부탁드려요!</span
+          >
+        </div>
+        <div class="article-content-element">
+          <div class="article-content-header">
+            <i class="fas fa-caret-right toggle-btn"></i>
+            <span class="artile-content-logo">🍿</span>
+            <span class="article-content-title">취미 생활</span>
+          </div>
+          <span class="article-content-value hidden"
+            >취미 생활은 따로 없고, 개발하는 것을 좋아합니다! 그래서 시간이 날
+            때마다 요즘은 개인 공부를 하고 있습니다 :)</span
+          >
+        </div>
+        <div class="article-content-element">
+          <div class="article-content-header">
+            <i class="fas fa-caret-right toggle-btn"></i>
+            <span class="artile-content-logo">📚</span>
+            <span class="article-content-title">공부하는 분야는?</span>
+          </div>
+          <span class="article-content-value hidden"
+            >Node.js를 집중적으로 공부하고 있습니다 🙂</span
+          >
+        </div>
+        <div class="article-content-element">
+          <div class="article-content-header">
+            <i class="fas fa-caret-right toggle-btn"></i>
+            <span class="artile-content-logo">📢</span>
+            <span class="article-content-title">기타 정보</span>
+          </div>
+          <ul>
+            <li class="article-content-info article-content-value hidden">
+              - 멋쟁이사자처럼 7기 (2019)
+            </li>
+          </ul>
+        </div>
+      </div>
+      <ul class="links">
+        <a href="https://github.com/devholic22"
+          ><img src="./static/img/github.png"
+        /></a>
+        <a href="https://www.instagram.com/hyunjoon.tech/">
+          <img src="./static/img/insta.png" />
+        </a>
+      </ul>
+    </article>
+    <footer>
+      <span> 2022 Copyright MJU LIKELION </span>
+    </footer>
+    <script src="./static/js/mode.js"></script>
+    <script src="./static/js/toggle.js"></script>
+    <script src="./static/js/time.js"></script>
+    <div id="disqus_thread"></div>
+    <script>
+      /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+      /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+      (function () {
+        // DON'T EDIT BELOW THIS LINE
+        var d = document,
+          s = d.createElement("script");
+        s.src = "https://lionteam1hyunjoonchoi.disqus.com/embed.js";
+        s.setAttribute("data-timestamp", +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript
+      >Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript"
+        >comments powered by Disqus.</a
+      ></noscript
+    >
+  </body>
+</html>

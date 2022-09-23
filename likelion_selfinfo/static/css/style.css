@@ -1,0 +1,19 @@
+@import "./reset.css";
+@import "./clock.css";
+@import "./header.css";
+@import "./profile.css";
+@import "./article.css";
+@import "./footer.css";
+@import "./links.css";
+
+.dark {
+  background-color: black;
+  color: white;
+}
+.icon {
+  font-size: 40px;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
