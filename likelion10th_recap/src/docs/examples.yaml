@@ -1,0 +1,6 @@
+components:
+  examples:
+    EMAIL_ALREADY_EXISTS:
+      description: 이미 등록된 이메일로 가입하려 시도
+      value:
+        error: "Email already exist"
